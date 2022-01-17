@@ -14,7 +14,7 @@ proc create_symbol_button2 {contexts x y size padding label symbol color action 
 	return $button_id
 }
 
-create_symbol_button2 $espresso_contexts 80 60 240 20 [translate "sleep"] $::symbol_power $::color_menu_background { say [translate "sleep"] $::settings(sound_button_in); start_sleep} 80 18
+create_symbol_button2 $espresso_contexts 2260 60 240 20 [translate "sleep"] $::symbol_power $::color_menu_background { say [translate "sleep"] $::settings(sound_button_in); start_sleep} 80 18
 
 set ::water_button_id [create_symbol_button2 $espresso_contexts 600 600 360 30 [translate "hot water"] $::symbol_water $::color_menu_background {say [translate "hot water"] $::settings(sound_button_in); do_start_water} 110]
 set ::espresso_action_button_id [create_symbol_button2 $espresso_contexts 1080 580 400 30 [translate "espresso"] $::symbol_espresso $::color_menu_background {say [translate {start}] $::settings(sound_button_in); do_start_espresso} 140]
