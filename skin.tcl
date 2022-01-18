@@ -16,10 +16,10 @@ add_metric_package "meter"
 
 add_metric_page "home"
 add_metric_page "espresso"
-add_metric_page "espresso_done"
 add_metric_page "steam"
 add_metric_page "water"
 add_metric_page "flush" 
+add_metric_page "analysis"
 
 # add status bar after loading Metric pages to ensure it draws on top of everything else
 add_metric_package "statusbar"
