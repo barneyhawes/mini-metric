@@ -139,11 +139,10 @@ proc show_android_navigation { visible } {
 	set SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION 0x00000200
 	set SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN 0x00000400
 
-	if { $visible } {
-		set ::android_full_screen_flags [expr {$SYSTEM_UI_FLAG_LAYOUT_STABLE | $SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | $SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | $SYSTEM_UI_FLAG_IMMERSIVE}]
-
-	} else {
+	if { $visible == true } {
 		set ::android_full_screen_flags [expr {$SYSTEM_UI_FLAG_LAYOUT_STABLE | $SYSTEM_UI_FLAG_IMMERSIVE}]
+	} else {
+		set ::android_full_screen_flags [expr {$SYSTEM_UI_FLAG_LAYOUT_STABLE | $SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | $SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | $SYSTEM_UI_FLAG_HIDE_NAVIGATION | $SYSTEM_UI_FLAG_FULLSCREEN | $SYSTEM_UI_FLAG_IMMERSIVE}]
 	}
 	borg systemui $::android_full_screen_flags
 }

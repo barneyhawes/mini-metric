@@ -9,10 +9,12 @@ set ::espresso_action_button_id [create_symbol_button2 $espresso_contexts 1080 5
 set ::steam_button_id [create_symbol_button2 $espresso_contexts 1600 600 360 30 [translate "steam"] $::symbol_steam $::color_menu_background {say [translate "steam"] $::settings(sound_button_in); do_start_steam} 110]
 
 set ::flush_button_id [create_symbol_button2 $espresso_contexts 800 1250 240 30 [translate "flush"] $::symbol_flush $::color_menu_background {say [translate "flush"] $::settings(sound_button_in); do_start_flush} 72 18]
-create_symbol_button2 $espresso_contexts 1160 1250 240 20 [translate "settings"] $::symbol_settings $::color_menu_background { say [translate "settings"] $::settings(sound_button_in); show_settings }  72 18
+create_symbol_button2 $espresso_contexts 1160 1250 240 20 [translate "settings"] $::symbol_settings $::color_menu_background { say [translate "settings"] $::settings(sound_button_in); show_android_navigation false; show_settings}  72 18
 set ::lastshot_button_id [create_symbol_button2 $espresso_contexts 1520 1250 240 30 [translate "analysis"] $::symbol_chart $::color_menu_background {say [translate "analysis"] $::settings(sound_button_in); do_show_last_shot } 72 18]
 
 proc update_function_buttons {} {
+	show_android_navigation true 
+
 	if { [can_start_water] } {
 		.can itemconfigure $::water_button_id -fill $::color_text
 		.can itemconfigure [expr $::water_button_id + 1] -fill $::color_text

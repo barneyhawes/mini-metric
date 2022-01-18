@@ -39,3 +39,5 @@ if {$::debugging == 1} {
 }
 
 create_grid
+
+show_android_navigation true
