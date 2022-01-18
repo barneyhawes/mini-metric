@@ -4,7 +4,7 @@ add_page_title "steam" [translate "steam"]
 add_de1_text "steam" 1280 360 -text [translate "Warning: steam wand will purge a few seconds after stopping."] -font $::font_setting_heading -fill $::color_text -anchor "center" 
 
 
-set ::steam_stop_button_id [create_action_button "steam" 1280 1340 [translate "stop"] $::font_action_label $::color_text $::symbol_hand $::font_action_button $::color_action_button_stop $::color_action_button_text {say [translate "stop"] $::settings(sound_button_in); update_button_color $::steam_stop_button_id $::color_grey_text; start_idle; check_if_steam_clogged } "fullscreen"]
+set ::steam_stop_button_id [create_action_button "steam" 1280 1240 [translate "stop"] $::font_action_label $::color_text $::symbol_hand $::font_action_button $::color_action_button_stop $::color_action_button_text {say [translate "stop"] $::settings(sound_button_in); update_button_color $::steam_stop_button_id $::color_grey_text; start_idle; check_if_steam_clogged } "fullscreen"]
 
 set ::steam_power_1_id [rounded_rectangle "steam" .can [rescale_x_skin 340] [rescale_y_skin 550] [rescale_x_skin 620] [rescale_y_skin 830] [rescale_x_skin 55] $::color_background]
 rounded_rectangle "steam" .can [rescale_x_skin 350] [rescale_y_skin 560] [rescale_x_skin 610] [rescale_y_skin 820] [rescale_x_skin 50] $::color_menu_background
