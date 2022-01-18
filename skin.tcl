@@ -20,7 +20,6 @@ add_metric_page "espresso_done"
 add_metric_page "steam"
 add_metric_page "water"
 add_metric_page "flush" 
-add_metric_page "debug"
 
 # add status bar after loading Metric pages to ensure it draws on top of everything else
 add_metric_package "statusbar"
@@ -34,9 +33,9 @@ add_de1_button "saver" {say [translate "wake"] $::settings(sound_button_in); met
 
 # debug info
 if {$::debugging == 1} {
-	add_de1_variable "off espresso_menu_profile espresso_menu_beans espresso_menu_grind espresso_menu_dose espresso_menu_ratio espresso_menu_yield espresso_menu_temperature espresso espresso_done steam water flush debug" 1280 10 -text "" -font [get_font "Mazzard Medium" 12] -fill #fff -anchor "n" -textvariable {[join $::::metric_page_history " > "]}
+	add_de1_variable "off espresso espresso_done steam water flush debug" 1280 10 -text "" -font [get_font "Mazzard Medium" 12] -fill #fff -anchor "n" -textvariable {[join $::::metric_page_history " > "]}
     #.can create rectangle [rescale_x_skin 0] [rescale_y_skin 210] [rescale_x_skin 1500] [rescale_y_skin 1150] -fill "#fff" 
-    add_de1_variable "off espresso_menu_profile espresso_menu_beans espresso_menu_grind espresso_menu_dose espresso_menu_ratio espresso_menu_yield espresso_menu_temperature espresso espresso_done steam water flush debug" 10 220 -text "" -font Helv_6 -fill "#fff" -anchor "nw" -justify left -width 440 -textvariable {$::debuglog}
+    add_de1_variable "off espresso espresso_done steam water flush debug" 10 220 -text "" -font Helv_6 -fill "#fff" -anchor "nw" -justify left -width 440 -textvariable {$::debuglog}
 }
 
 create_grid
