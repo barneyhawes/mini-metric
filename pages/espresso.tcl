@@ -38,12 +38,12 @@ proc get_weight {} {
 	}
 }
 
-set ::espresso_weight_meter [meter new -x [rescale_x_skin 1860] -y [rescale_y_skin 900] -width [rescale_x_skin 500] -minvalue 0.0 -maxvalue 50.0 -get_meter_value get_weight -get_target_value get_target_weight -tick_frequency 5 -label_frequency 10 -needle_color $::color_yield -label_color $::color_meter_grey -tick_color $::color_background -contexts "espresso" -title [translate "Yield"] -units "g"]
+set ::espresso_weight_meter [meter new -x [rescale_x_skin 1860] -y [rescale_y_skin 1000] -width [rescale_x_skin 500] -minvalue 0.0 -maxvalue 50.0 -get_meter_value get_weight -get_target_value get_target_weight -tick_frequency 5 -label_frequency 10 -needle_color $::color_yield -label_color $::color_meter_grey -tick_color $::color_background -contexts "espresso" -title [translate "Yield"] -units "g"]
 add_de1_variable "espresso" -100 -100 -text "" -textvariable {[$::espresso_weight_meter update]} 
 
 create_action_button "espresso" 1280 1240 [translate "stop"] $::font_action_label $::color_text $::symbol_hand $::font_action_button $::color_action_button_stop $::color_action_button_text {say [translate "stop"] $::settings(sound_button_in); start_idle } "fullscreen"
 
-.can create arc [rescale_x_skin 1100] [rescale_y_skin 1160] [rescale_x_skin 1460] [rescale_y_skin 1520] -start 90 -extent 0 -style arc -width [rescale_x_skin 15] -outline $::color_action_button_text -tag "espresso_timer"
+.can create arc [rescale_x_skin 1100] [rescale_y_skin 1060] [rescale_x_skin 1460] [rescale_y_skin 1420] -start 90 -extent 0 -style arc -width [rescale_x_skin 15] -outline $::color_action_button_text -tag "espresso_timer"
 add_visual_items_to_contexts "espresso" "espresso_timer"
 
 proc update_espresso_timer {} {
