@@ -10,7 +10,6 @@ proc add_metric_page {name} { source "[skin_directory]/pages/$name.tcl" }
 
 # load the other packages for this skin
 add_metric_package "constants"
-add_metric_package "settings"
 add_metric_package "functions"
 add_metric_package "framework"
 add_metric_package "meter"
@@ -41,5 +40,3 @@ if {$::debugging == 1} {
 }
 
 create_grid
-
-metric_load_current_profile

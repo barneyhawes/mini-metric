@@ -25,15 +25,6 @@ proc add_page_title_left { contexts text } {
 	return $page_title_id
 }
 
-# add a regular button
-proc create_button { contexts x1 y1 x2 y2 text font backcolor textcolor action } {
-	if { [info exists ::_button_id] != 1 } { set ::_button_id 0 }
-	rounded_rectangle $contexts .can [rescale_x_skin $x1] [rescale_y_skin $y1] [rescale_x_skin $x2] [rescale_y_skin $y2] [rescale_x_skin 80] $backcolor
-	add_de1_text $contexts [expr ($x1 + $x2) / 2.0 ] [expr ($y1 + $y2) / 2.0 ] -text $text -font $font -fill $textcolor -anchor "center" -tag "button_text_$::_button_id" -state "hidden"
-	add_de1_button $contexts $action $x1 $y1 $x2 $y2
-	incr ::_button_id
-}
-
 # button with a symbol on
 proc create_symbol_button {contexts x y padding label symbol color action {symbolsize 64}} {
 	set button_id [create_symbol_box $contexts $x $y $label $symbol $color $symbolsize]
