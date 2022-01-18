@@ -1,6 +1,5 @@
 add_background "espresso"
-add_page_title_left "espresso" [translate "espresso"]
-add_de1_variable "espresso" 2480 120 -text "" -font $::font_setting_heading -fill $::color_text -anchor "e" -textvariable { $::settings(profile_title) }
+add_page_title "espresso" [translate "espresso"]
 
 proc get_target_pressure {} { return $::de1(goal_pressure) }
 set ::espresso_pressure_meter [meter new -x [rescale_x_skin 480] -y [rescale_y_skin 300] -width [rescale_x_skin 750] -minvalue 0.0 -maxvalue 12.0 -get_meter_value pressure -get_target_value get_target_pressure -tick_frequency 1.0 -label_frequency 1 -needle_color $::color_pressure -label_color $::color_meter_grey -tick_color $::color_background -contexts "espresso" -title [translate "Pressure"] -units "bar"]
@@ -43,14 +42,6 @@ set ::espresso_weight_meter [meter new -x [rescale_x_skin 1860] -y [rescale_y_sk
 add_de1_variable "espresso" -100 -100 -text "" -textvariable {[$::espresso_weight_meter update]} 
 
 create_action_button "espresso" 1280 1240 [translate "stop"] $::font_action_label $::color_text $::symbol_hand $::font_action_button $::color_action_button_stop $::color_action_button_text {say [translate "stop"] $::settings(sound_button_in); start_idle } "fullscreen"
-
-# TODO: rounded ends (need to draw a circle at each endpoint)
-
-add_de1_variable "espresso" 1280 900 -text "" -font $::font_setting_heading -fill $::color_action_button_text -anchor "ne" -textvariable {[espresso_elapsed_timer]}
-add_de1_text "espresso" 1290 900 -text [translate "s"] -font $::font_setting_heading -fill $::color_action_button_text -anchor "nw"
-
-add_de1_variable "espresso" 1280 975 -anchor "n" -text "" -font $::font_setting_heading -fill $::color_action_button_text -textvariable {$::settings(current_frame_description)} 
-
 
 .can create arc [rescale_x_skin 1100] [rescale_y_skin 1160] [rescale_x_skin 1460] [rescale_y_skin 1520] -start 90 -extent 0 -style arc -width [rescale_x_skin 15] -outline $::color_action_button_text -tag "espresso_timer"
 add_visual_items_to_contexts "espresso" "espresso_timer"
