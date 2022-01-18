@@ -67,7 +67,6 @@ proc do_start_espresso {} {
 		borg toast [translate "DE1 not connected"]
 		return
 	}
-	update_de1_async 1
 	if {[is_heating]} { 
 		borg toast [translate "Please wait for heating"]
 		return
