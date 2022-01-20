@@ -43,7 +43,7 @@ add_de1_variable "espresso" -100 -100 -text "" -textvariable {[$::espresso_weigh
 
 create_action_button "espresso" 1280 1240 [translate "stop"] $::font_action_label $::color_action_button_text $::symbol_hand $::font_action_button $::color_action_button_stop $::color_action_button_text {say [translate "stop"] $::settings(sound_button_in); start_idle } "fullscreen"
 
-.can create arc [rescale_x_skin 1100] [rescale_y_skin 1060] [rescale_x_skin 1460] [rescale_y_skin 1420] -start 90 -extent 0 -style arc -width [rescale_x_skin 15] -outline $::color_action_button_text -tag "espresso_timer"
+.can create arc [rescale_x_skin 1087] [rescale_y_skin 1047] [rescale_x_skin 1473] [rescale_y_skin 1433] -start 90 -extent 0 -style arc -width [rescale_x_skin 15] -outline $::color_meter_grey -tag "espresso_timer"
 add_visual_items_to_contexts "espresso" "espresso_timer"
 
 proc update_espresso_timer {} {
