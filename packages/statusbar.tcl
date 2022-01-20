@@ -9,7 +9,7 @@ set ::temperature_meter [meter new -x [rescale_x_skin 60] -y [rescale_y_skin 121
 add_de1_variable $status_meter_contexts -100 -100 -text "" -textvariable {[$::temperature_meter update]} 
 
 # status messages
-set ::connection_message_text_id [add_de1_text $status_meter_contexts 1280 280 -text "" -font $::font_setting_heading -fill $::color_temperature -anchor "n" ]
+set ::connection_message_text_id [add_de1_text $status_meter_contexts 1280 280 -text "" -font $::font_setting_heading -fill $::color_warning -anchor "n" ]
 set ::update_message_text_id [add_de1_text $status_meter_contexts 2280 180 -text "" -font $::font_setting_heading -fill $::color_grey_text -anchor "e" ]
 
 set ::temperature_message_text_id  [add_de1_text $status_meter_contexts 200 1080 -text "" -font $::font_setting_heading -fill $::color_temperature -anchor "center" ]

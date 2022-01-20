@@ -36,9 +36,9 @@ proc create_symbol_button {contexts x y padding label symbol color action {symbo
 proc create_symbol_button2 {contexts x y size padding label symbol color action {symbolsize 128} {fontsize 24}} {
 	set font_symbol [get_font "Mazzard SemiBold" $symbolsize]
 	set font_label [get_font "Mazzard Regular" $fontsize]
-	rounded_rectangle $contexts .can [rescale_x_skin $x] [rescale_y_skin $y] [rescale_x_skin [expr $x + $size]] [rescale_y_skin [expr $y + $size]] [rescale_x_skin [expr $size / 6]] $color
-	set button_id [add_de1_text $contexts [expr $x + ($size / 2)] [expr $y + ($size / 2) - ($size / 18)] -text $symbol -font $font_symbol -fill $::color_text -anchor "center" -state "hidden"]
-	add_de1_text $contexts [expr $x + ($size / 2)] [expr $y + $size - ($size / 24)] -text $label -font $font_label -fill $::color_text -anchor "s" -state "hidden"
+	set button_id [rounded_rectangle $contexts .can [rescale_x_skin $x] [rescale_y_skin $y] [rescale_x_skin [expr $x + $size]] [rescale_y_skin [expr $y + $size]] [rescale_x_skin [expr $size / 6]] $color]
+	add_de1_text $contexts [expr $x + ($size / 2)] [expr $y + ($size / 2) - ($size / 18)] -text $symbol -font $font_symbol -fill "#000" -anchor "center" -state "hidden"
+	add_de1_text $contexts [expr $x + ($size / 2)] [expr $y + $size - ($size / 24)] -text $label -font $font_label -fill "#000" -anchor "s" -state "hidden"
 	add_de1_button $contexts $action [expr $x - $padding] [expr $y - $padding] [expr $x + 180 + $padding] [expr $y + $size + $padding]
 	return $button_id
 }
@@ -114,8 +114,8 @@ proc create_symbol_box {contexts x y label symbol color {symbolsize 64}} {
 	set font_symbol [get_font "Mazzard SemiBold" $symbolsize]
 	set font_label [get_font "Mazzard Regular" 14]
 	rounded_rectangle $contexts .can [rescale_x_skin $x] [rescale_y_skin $y] [rescale_x_skin [expr $x + 180]] [rescale_y_skin [expr $y + 180]] [rescale_x_skin 30] $color
-	set button_id [add_de1_text $contexts [expr $x + 90] [expr $y + 70] -text $symbol -font $font_symbol -fill $::color_text -anchor "center" -state "hidden"]
-	add_de1_text $contexts [expr $x + 90] [expr $y + 170] -text $label -font $font_label -fill $::color_text -anchor "s" -state "hidden"
+	set button_id [add_de1_text $contexts [expr $x + 90] [expr $y + 70] -text $symbol -font $font_symbol -fill "#000" -anchor "center" -state "hidden"]
+	add_de1_text $contexts [expr $x + 90] [expr $y + 170] -text $label -font $font_label -fill "#000" -anchor "s" -state "hidden"
 	return $button_id
 }
 
