@@ -2,7 +2,7 @@ set espresso_contexts "off"
 add_background $espresso_contexts
 add_page_title $espresso_contexts [translate "decent espresso"]
 
-create_symbol_button2 $espresso_contexts 2260 60 240 20 [translate "exit"] $::symbol_power $::color_button_off { say [translate "sleep"] $::settings(sound_button_in); app_exit} 80 18
+create_symbol_button2 $espresso_contexts 2260 60 240 20 [translate "power"] $::symbol_power $::color_button_off { say [translate "power"] $::settings(sound_button_in); app_exit} 80 18
 
 set ::water_button_id [create_symbol_button2 $espresso_contexts 600 500 360 30 [translate "hot water"] $::symbol_water $::color_button_water {say [translate "hot water"] $::settings(sound_button_in); do_start_water} 110]
 set ::espresso_action_button_id [create_symbol_button2 $espresso_contexts 1080 480 400 30 [translate "espresso"] $::symbol_espresso $::color_button_espresso {say [translate {start}] $::settings(sound_button_in); do_start_espresso} 140]
